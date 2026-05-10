@@ -1,0 +1,101 @@
+/*
+=============================================================================================
+|    File: main.css                                                                         |
+|    Author: Andrew Scott Zimmerman                                                         |
+|    Copyright: Copyright © Andrew Zimmerman 2026                                           |
+|    Description: Tailwind covers the vast majority of styling, however, this file contains |
+|    page transition keyframes (works in tandem with nuxt.config and app.pageTransition),   |
+|    scroll-fade animation (paired with the v-fade-in directive), focus-visible defaults,   |
+|    and reduced-motion overrides.                                                          |
+=============================================================================================
+*/
+
+/*
+    Page Transitions
+    ------------------
+    Description: Pages fade in from just below the view and fade out slightly upward.
+    250ms used to balance speed with a smooth experience.
+*/
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 250ms ease-out, transform 250ms ease-out;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+/*
+    Scroll-Fade Animation
+    -----------------------
+    Description: Applied using the v-fade-in custom directive (see plugins/scroll-fade.js).
+    .fade-in-target added on mount, then .fade-in-visible when the target scrolls into view.
+*/
+.fade-in-target {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
+}
+
+.fade-in-target.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*
+    Focus-Visible Defaults
+    ------------------------
+    Description: Focus ring changed to match the accent color on keyboard nav.
+*/
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid #1B2A4E;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/*
+    Reduced-Motion Overrides
+    --------------------------
+    Description: The site will still honor 'prefers-reduced-motion: reduce' OS opotion.
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    /*
+    Strip transitions and animations.
+    !important used to ensure component-scoped styles don't work.
+    */
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    /*
+        Fade-In targets are made immediately visible.
+    */
+    .fade-in-target {
+        opacity: 1;
+        transform: none;
+    }
+}

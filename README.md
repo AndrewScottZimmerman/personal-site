@@ -1,21 +1,75 @@
-# andrewscottzimmerman.com
-A personal professional website for and created by Andrew Zimmerman.
+# Nuxt Minimal Starter
 
-## Stack
-- Nuxt (static generation)
-- Tailwind CSS
-- Hosted on AWS (S3 + CloudFront + ACM)
-- DNS via Cloudflare
-- CI/CD via GitHub Actions with OIDC
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Local Development
+## Setup
+
+Make sure to install dependencies:
 
 ```bash
+# npm
 npm install
-run dev
+
+# pnpm
+pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
 ```
 
-site runs on 'localhost:3000'.
+## Development Server
 
-## Planning artifacts
-See `docs/` for content drafts, design system, build pathway, and architectural decisions.
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
