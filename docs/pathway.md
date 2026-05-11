@@ -9,15 +9,17 @@
 ## Stage 2 - Build Website Locally [In Progress]
 - Start building out the website locally.
 - Nuxt scaffolding
-- Build out the 5 pages
+- Build out the pages
 - Implement the design system
 - Add footer
 - Add nav
+- Push to GitHub
 - Test responsiveness via Lighthouse (95 and above required to pass)
 - Update README.md
-- Push to GitHub once Compliance has sent approval
+- Push to GitHub
 
 ## Stage 3 - Build AWS Infrastructure
+- To do once compliance has signed off.
 - Write Terraform: S3 Bucket (private), CloudFront distribution, ACM Certificate, Origin Access Control, CloudFront response headers policy with security headers, CloudFront function for URL rewrites.
 - ACM cert validation CNAME to Cloudflare
 

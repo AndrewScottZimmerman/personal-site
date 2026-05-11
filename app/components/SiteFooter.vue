@@ -9,6 +9,11 @@
 -->
 <script setup>
 const currentYear = new Date().getFullYear()
+
+const legalLinks = [
+  { to: '/terms',   label: 'Terms' },
+  { to: '/privacy', label: 'Privacy' }
+]
 </script>
 
 <template>
@@ -20,9 +25,54 @@ const currentYear = new Date().getFullYear()
         recommendation, or an offer to buy or sell any security. Projects
         featured here are for educational and demonstrative purposes only.
       </p>
+
+      <!-- Terms and Policy Links. -->
+      <nav
+        class="flex justify-center gap-6 mt-8"
+        aria-label="Legal"
+      >
+        <NuxtLink
+          v-for="link in legalLinks"
+          :key="link.to"
+          :to="link.to"
+          class="footer-link font-sans text-small text-ink-secondary"
+        >
+          {{ link.label }}
+        </NuxtLink>
+      </nav>
+
       <p class="font-sans text-micro text-ink-secondary mt-6">
         Copyright © Andrew Zimmerman {{ currentYear }}
       </p>
     </div>
   </footer>
 </template>
+
+<style scoped>
+.footer-link {
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 200ms ease-out;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: theme('colors.ink.secondary');
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 250ms ease-out;
+}
+
+.footer-link:hover {
+  color: theme('colors.ink.primary');
+}
+
+.footer-link:hover::after {
+  transform: scaleX(1);
+}
+</style>
