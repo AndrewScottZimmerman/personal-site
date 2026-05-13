@@ -1,4 +1,4 @@
-# andrewzimmerman.com
+# andrewscottzimmerman.com
 
 A personal website for Andrew Scott Zimmerman (myself). Built with Nuxt 4, statically generated,
 and to be deployed to AWS S3 + CloudFront via GitHub Actions.
