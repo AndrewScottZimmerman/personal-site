@@ -78,6 +78,7 @@ npm run generate
 | `/connect` | 95 | 100 | 100 | 100 |
 
 ## Project Structure
+```
 personal-site/
 ├── app/
 │   ├── assets/css/        # main.css — transitions, scroll-fade, focus styles
@@ -93,6 +94,7 @@ personal-site/
 │   └── optimize-images.mjs
 ├── nuxt.config.ts
 └── tailwind.config.js
+```
 
 ## Deployment Architecture
 GitHub → GitHub Actions → nuxt generate → S3 sync → CloudFront invalidation
@@ -107,4 +109,4 @@ Cloudflare DNS (CNAME)
 | `docs/decisions.md` | Architectural decision log |
 | `docs/design.md` | Design system reference |
 | `docs/content-draft.md` | Content planning |
-| `docs/compliance-notes-log.md` | Compliance review log |
+| `docs/compliance-notes-log.md` | Compliance review log | 
