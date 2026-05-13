@@ -27,13 +27,12 @@ useHead({
         { property: 'og:description', content: 'Financial services professional working at the intersection of investments, analysis, and software.' }
     ],
     link: [
-        // Preconnect to fonts so the browser establishes TLS in parallel with HTML parsing.
-        { rel: 'reconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        {
-            rel: 'stylesheet',
-            href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&'
-        }
+    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+    {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap'
+    }
     ]
 })
 </script>

@@ -39,15 +39,17 @@ defineProps({
 
 <template>
   <article class="bg-bg-muted rounded-sm overflow-hidden flex flex-col">
-<div class="aspect-[16/10] bg-bg-muted/60 overflow-hidden">
-      <img
-        v-if="image"
-        :src="image"
-        :alt="`${title} screenshot`"
-        class="w-full h-full object-cover"
-        loading="lazy"
-        decoding="async"
-      />
+    <div class="aspect-[16/10] bg-bg-muted/60 overflow-hidden">
+      <picture v-if="image">
+        <source :srcset="image.replace(/\.(jpg|jpeg|png)$/i, '.webp')" type="image/webp" />
+        <img
+          :src="image"
+          :alt="`${title} screenshot`"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
       <div
         v-else
         class="w-full h-full flex items-center justify-center"
@@ -59,7 +61,7 @@ defineProps({
     </div>
 
     <div class="p-8 flex flex-col flex-1">
-      <h3 class="font-serif text-h3 text-ink-primary mb-3">{{ title }}</h3>
+      <h2 class="font-serif text-h3 text-ink-primary mb-3">{{ title }}</h2>
       <p class="font-serif text-body text-ink-primary leading-relaxed mb-6 flex-1">
         {{ description }}
       </p>

@@ -24,11 +24,17 @@ const heroOverlayStyle = {
   <div>
         <!-- Hero -->
     <section class="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
-      <img
-        src="/images/hero.jpg"
-        alt=""
-        class="absolute inset-0 w-full h-full object-cover"
-      />
+      <picture>
+        <source srcset="/images/hero.webp" type="image/webp" />
+        <img
+          src="/images/hero.jpg"
+          fetchpriority="high"
+          alt=""
+          width="1920"
+          height="1080"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+      </picture>
       <div class="absolute inset-0" :style="heroOverlayStyle" aria-hidden="true" />
 
       <div class="relative text-center px-6 max-w-prose">

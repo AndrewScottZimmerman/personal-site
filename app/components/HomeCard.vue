@@ -40,13 +40,16 @@ const overlayStyle = {
     class="group relative block aspect-[4/3] overflow-hidden rounded-sm"
   >
         <!-- Background image. No alt due to the text already conveying meaning.  -->
-        <img
+        <picture>
+          <source :srcset="image.replace(/\.(jpg|jpeg|png)$/i, '.webp')" type="image/webp" />
+          <img
             :src="image"
             alt=""
             class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105 group-hover:brightness-110"
             loading="lazy"
             decoding="async"
-        />
+          />
+        </picture>
         <!-- Gradient overlay to improve legibility. -->
         <div
             class="absolute inset-0 transition-opacity duration-500 group-hover:opacity-80"
@@ -56,7 +59,7 @@ const overlayStyle = {
 
         <!-- Card Content -->
         <div class="relative h-full flex flex-col items-center justify-center text-center px-6 py-8">
-            <h3 class="font-serif text-h3 text-white mb-2">{{ title }}</h3>
+            <h2 class="font-serif text-h3 text-white mb-2">{{ title }}</h2>
             <p class="font-serif text-body text-white/90 max-w-xs">{{ description }}</p>
         </div>
     </NuxtLink>

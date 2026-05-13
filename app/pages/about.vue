@@ -29,13 +29,18 @@ useHead({
     <section v-fade-in class="max-w-grid mx-auto px-6 py-12">
       <div class="grid md:grid-cols-2 gap-12 items-start max-w-4xl mx-auto">
         <div class="aspect-[3/4] overflow-hidden rounded-sm">
-          <img
-            src="/images/about-portrait.jpg"
-            alt="Andrew Scott Zimmerman"
-            class="w-full h-full object-cover"
-            loading="lazy"
-            decoding="async"
-          />
+          <picture>
+            <source srcset="/images/about-portrait.webp" type="image/webp" />
+            <img
+              src="/images/about-portrait.jpg"
+              fetchpriority="high"
+              alt="Andrew Scott Zimmerman"
+              width="1000"
+              height="1333"
+              class="w-full h-full object-cover"
+              decoding="async"
+            />
+          </picture>
         </div>
         <div>
           <div class="font-sans text-small text-ink-secondary mb-2 tracking-wider-caps">
@@ -104,13 +109,18 @@ useHead({
     <section v-fade-in class="max-w-grid mx-auto px-6 py-12">
       <div class="grid md:grid-cols-2 gap-12 items-start max-w-4xl mx-auto">
         <div class="aspect-[4/3] overflow-hidden rounded-sm md:order-1 order-2">
-          <img
-            src="/images/about-dirtbike.jpg"
-            alt="Out riding"
-            class="w-full h-full object-cover"
-            loading="lazy"
-            decoding="async"
-          />
+          <picture>
+            <source srcset="/images/about-dirtbike.webp" type="image/webp" />
+            <img
+              src="/images/about-dirtbike.jpg"
+              alt="Out riding"
+              width="1200"
+              height="900"
+              class="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
         </div>
         <div class="md:order-2 order-1">
           <div class="font-sans text-small text-ink-secondary mb-2 tracking-wider-caps">

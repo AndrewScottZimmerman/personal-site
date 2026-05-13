@@ -21,12 +21,15 @@ defineProps({
 </script>
 
 <template>
-  <img
-    :src="'/images/signature.png'"
-    :alt="alt"
-    :width="width"
-    class="block h-auto"
-    loading="lazy"
-    decoding="async"
-  />
+  <picture>
+    <source srcset="/images/signature.webp" type="image/webp" />
+    <img
+      src="/images/signature.png"
+      :alt="alt"
+      :width="width"
+      class="block h-auto"
+      loading="lazy"
+      decoding="async"
+    />
+  </picture>
 </template>
